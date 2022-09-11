@@ -102,7 +102,7 @@ class FirstStageMount {
     void UseDsuIfPresent();
     // Reads all fstab.avb_keys from the ramdisk for first-stage mount.
     void PreloadAvbKeys();
-    // Copies /avb/*.avbpubkey used for DSU from the ramdisk to /metadata for key
+    // Copies /avb/\*.avbpubkey used for DSU from the ramdisk to /metadata for key
     // revocation check by DSU installation service.
     void CopyDsuAvbKeys();
 
@@ -599,7 +599,7 @@ bool FirstStageMount::MountPartitions() {
     return true;
 }
 
-// Preserves /avb/*.avbpubkey to /metadata/gsi/dsu/avb/, so they can be used for
+// Preserves /avb/\*.avbpubkey to /metadata/gsi/dsu/avb/, so they can be used for
 // key revocation check by DSU installation service.  Note that failing to
 // copy files to /metadata is NOT fatal, because it is auxiliary to perform
 // public key matching before booting into DSU images on next boot. The actual
@@ -611,7 +611,7 @@ void FirstStageMount::CopyDsuAvbKeys() {
     if (ec) {
         LOG(ERROR) << "Failed to remove directory " << gsi::kDsuAvbKeyDir << ": " << ec.message();
     }
-    // Copy keys from the ramdisk /avb/* to gsi::kDsuAvbKeyDir.
+    // Copy keys from the ramdisk /avb/\* to gsi::kDsuAvbKeyDir.
     static constexpr char kRamdiskAvbKeyDir[] = "/avb";
     std::filesystem::copy(kRamdiskAvbKeyDir, gsi::kDsuAvbKeyDir, ec);
     if (ec) {

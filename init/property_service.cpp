@@ -1289,9 +1289,7 @@ void PropertyInit() {
 
     mkdir("/dev/__properties__", S_IRWXU | S_IXGRP | S_IXOTH);
     CreateSerializedPropertyInfo();
-    if (__system_property_area_init()) {
-        LOG(FATAL) << "Failed to initialize property area";
-    }
+    __system_property_area_init();
     if (!property_info_area.LoadDefaultPath()) {
         LOG(FATAL) << "Failed to load serialized property info file";
     }
