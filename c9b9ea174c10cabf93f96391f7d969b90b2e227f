@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f96aa79c_b56b6ba9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000006
+      },
+      "writtenOn": "2023-01-15T11:15:30Z",
+      "side": 1,
+      "message": "Moto-Common jenkins repopick usage only",
+      "revId": "c9b9ea174c10cabf93f96391f7d969b90b2e227f",
+      "serverId": "90ec3431-229f-4ad1-9645-e5b063dc3de3"
+    }
+  ]
+}
